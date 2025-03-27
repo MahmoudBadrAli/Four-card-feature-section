@@ -18,7 +18,15 @@ body {
 .page {
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 75px;
+    padding-top: 35px;
+}
+
+@media (max-width: 767px) {
+    .page {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 35px;
+    }
 }
 
 .head {
@@ -63,13 +71,64 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 60px;
+    margin-bottom: 35px;
     gap: 25px;
 }
-@media (max-width: 1150px) {
+
+@media (max-width: 767px) {
     .content {
         flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1150px) and (min-width: 768px) {
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content .card-holder {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 25px;
+    }
+
+    .content .card-holder:nth-child(2) {
+        flex-direction: column;
+    }
+
+    .super {
+        margin-bottom: -30px !important;
+    }
+
+    .karma {
+        margin-bottom: -50px !important;
+    }
+    .calculator {
+        margin-bottom: -35px !important;
+    }
+}
+
+@media (max-width: 1150px) and (min-width: 768px) {
+
+    .content .card-holder:nth-child(1),
+    .content .card-holder:nth-child(3) {
+        width: calc(50% - 12.5px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .card-holder:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
     }
 }
 
@@ -79,7 +138,8 @@ body {
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     position: relative;
-    border-top: 5.5px solid transparent;
+    border-top: 5px solid transparent;
+    margin-bottom: 20px;
 }
 
 .content .card::before {
@@ -121,11 +181,6 @@ body {
     margin-left: auto;
 }
 
-.middle {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
 
 .page .super {
     border-color: hsl(180, 62%, 55%);
@@ -156,8 +211,6 @@ body {
 .page .karma::before {
     border-bottom-color: hsl(34, 97%, 64%);
 }
-
-
 
 .page .calculator {
     border-color: hsl(212, 86%, 64%);
